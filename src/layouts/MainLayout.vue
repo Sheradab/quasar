@@ -23,43 +23,24 @@
       >
         <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
           <q-list padding>
-            <q-item clickable v-ripple>
+
+            <q-item  to="/main" exact active clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="inbox" />
+                <q-icon name="main" />
               </q-item-section>
 
               <q-item-section>
-                Inbox
+                Главная
               </q-item-section>
             </q-item>
 
-            <q-item active clickable v-ripple>
+            <q-item to="/about" exact clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="star" />
+                <q-icon name="about" />
               </q-item-section>
 
               <q-item-section>
-                Star
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="send" />
-              </q-item-section>
-
-              <q-item-section>
-                Send
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="drafts" />
-              </q-item-section>
-
-              <q-item-section>
-                Drafts
+                О нас
               </q-item-section>
             </q-item>
           </q-list>
@@ -77,7 +58,9 @@
       </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </q-page-container>
   </q-layout>
 </template>
